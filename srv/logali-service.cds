@@ -11,4 +11,7 @@ service LogaliService {
     entity Month             as projection on entitys.Months;
     entity ProductReview     as projection on entitys.ProductReview;
     entity SalesData         as projection on entitys.SalesData;
+    entity TestProduct       as projection on entitys.SelfProducts;
+    entity TestProduct3      as projection on entitys.SelfProducts3;
+
 }
