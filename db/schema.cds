@@ -71,21 +71,30 @@ entity Products {
         Width            : Decimal(16, 2);
         Depth            : Decimal(16, 2);
         Quantity         : Decimal(16, 2);
+        // Supplier_Id       : UUID;
+        // ToSupplier        : Association to one Suppliers
+        //                         on ToSupplier.ID = Supplier_Id;
+        // UnitOfMeasures_Id : String(2);
+        // toUnitOfMeasures  : Association to one UnitOfMeasures
+        //                         on toUnitOfMeasures.ID = UnitOfMeasures_Id;
+        Supplier         : Association to one Suppliers;
+        UnitOfMeasure    : Association to one UnitOfMeasures;
 }
 
 entity Suppliers {
-    ID      : UUID;
-    // Name    : String;
-    Name    : Products:Name;
-    // Street     : String;
-    // City       : String;
-    // State      : String(2);
-    // PostalCode : String(5);
-    // Country    : String(3);
-    Address : Address;
-    Email   : String;
-    Phone   : String;
-    Fax     : String;
+    key ID      : UUID;
+        // Name    : String;
+        Name    : Products:Name;
+        // Street     : String;
+        // City       : String;
+        // State      : String(2);
+        // PostalCode : String(5);
+        // Country    : String(3);
+        Address : Address;
+        Email   : String;
+        Phone   : String;
+        Fax     : String;
+
 }
 
 entity Categories {
